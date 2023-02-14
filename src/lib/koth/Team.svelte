@@ -1,11 +1,11 @@
 <script lang="ts">
-    import {capturingTeam} from '../koth-team';
+    import {capturingTeam} from '../koth';
 
     export let name: string;
     export let color: string;
 
     const POINTS_PER_SECOND = 10;
-    const SECONDS_PER_SESSION = 3;
+    const SECONDS_PER_SESSION = 5;
     const pointsPerSession = POINTS_PER_SECOND * SECONDS_PER_SESSION;
 
     let score = 0;
