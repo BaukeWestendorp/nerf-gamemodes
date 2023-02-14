@@ -13,11 +13,5 @@
         grid-template-columns: repeat(2, 0.5fr);
         width: 100vw;
         height: 100vh;
-
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
     }
 </style>
