@@ -27,7 +27,7 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-1b0dtwk", document.head);
+      const head_nodes = head_selector("svelte-1n98f95", document.head);
       link = claim_element(head_nodes, "LINK", { rel: true, href: true });
       meta = claim_element(head_nodes, "META", { name: true, content: true });
       head_nodes.forEach(detach);
@@ -38,7 +38,7 @@ function create_fragment(ctx) {
     },
     h() {
       attr(link, "rel", "manifest");
-      attr(link, "href", base + "/manifest.webmanifest");
+      attr(link, "href", "/" + base + "/manifest.webmanifest");
       attr(meta, "name", "viewport");
       attr(meta, "content", "width=device-width, initial-scale=1.0, viewport-fit=cover");
     },
