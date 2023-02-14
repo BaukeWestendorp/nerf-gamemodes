@@ -27,8 +27,8 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-1n98f95", document.head);
-      link = claim_element(head_nodes, "LINK", { rel: true, href: true });
+      const head_nodes = head_selector("svelte-n108ae", document.head);
+      link = claim_element(head_nodes, "LINK", { rel: true, href: true, crossorigin: true });
       meta = claim_element(head_nodes, "META", { name: true, content: true });
       head_nodes.forEach(detach);
       t = claim_space(nodes);
@@ -39,6 +39,7 @@ function create_fragment(ctx) {
     h() {
       attr(link, "rel", "manifest");
       attr(link, "href", "/" + base + "/manifest.webmanifest");
+      attr(link, "crossorigin", "use-credentials");
       attr(meta, "name", "viewport");
       attr(meta, "content", "width=device-width, initial-scale=1.0, viewport-fit=cover");
     },
