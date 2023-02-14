@@ -1,15 +1,15 @@
 {
-    "name": "NERF Gamemodes",
-    "short_name": "NERF Gamemodes",
-    "description": "A collection of gamemodes for NERF battles",
-    "icons": [
-        {
-            "src": "favicon.png",
-            "sizes": "128x128",
-            "type": "image/png"
-        }
-    ],
-    "display": "fullscreen",
-    "scope": "/nerf-gamemodes/",
-    "start_url": "/nerf-gamemodes/"
+	"name": "NERF Gamemodes",
+	"short_name": "NERF Gamemodes",
+	"description": "A collection of gamemodes for NERF battles",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		}
+	],
+	"display": "fullscreen",
+	"scope": "/nerf-gamemodes/",
+	"start_url": "/nerf-gamemodes/"
 }

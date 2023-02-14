@@ -45,8 +45,8 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h() {
-      attr(div1, "class", "overlay svelte-15f8l03");
-      attr(div2, "class", "team svelte-15f8l03");
+      attr(div1, "class", "overlay svelte-1hnw16n");
+      attr(div2, "class", "team svelte-1hnw16n");
       set_style(
         div2,
         "--color",
@@ -206,7 +206,7 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "teams svelte-z7wjo9");
+      attr(div, "class", "teams svelte-8pf9d9");
     },
     m(target, anchor) {
       insert_hydration(target, div, anchor);

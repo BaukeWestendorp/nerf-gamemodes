@@ -24,7 +24,7 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-1axfum0", document.head);
+      const head_nodes = head_selector("svelte-11s7fki", document.head);
       meta = claim_element(head_nodes, "META", { name: true, content: true });
       head_nodes.forEach(detach);
       t = claim_space(nodes);
