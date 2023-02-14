@@ -1,0 +1,8 @@
+{
+    "name": "NERF Gamemodes",
+    "short_name": "NERF Gamemodes",
+    "description": "A collection of gamemodes for NERF battles",
+    "icons": [
+    ],
+    "display": "fullscreen"
+}
