@@ -4,5 +4,7 @@
     "description": "A collection of gamemodes for NERF battles",
     "icons": [
     ],
-    "display": "fullscreen"
+    "display": "fullscreen",
+    "scope": "/nerf-gamemodes/",
+    "start_url": "/nerf-gamemodes/"
 }
