@@ -1,5 +1,6 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, e as empty, c as claim_space, b as insert_hydration, g as group_outros, t as transition_out, d as check_outros, f as transition_in, h as detach, j as afterUpdate, o as onMount, k as element, l as claim_element, m as children, n as attr, p as set_style, q as text, r as claim_text, u as set_data, v as binding_callbacks, w as construct_svelte_component, x as create_component, y as claim_component, z as mount_component, A as destroy_component, B as tick } from "./chunks/index-fa569249.js";
-import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, e as base, P as PRELOAD_PRIORITIES, h as init$1, j as set_assets, k as set_version } from "./chunks/singletons-9bd8cb5d.js";
+import { S as SCROLL_KEY, a as SNAPSHOT_KEY, I as INDEX_KEY, g as get_base_uri, f as find_anchor, b as get_link_info, c as get_router_options, s as stores, i as is_external_url, d as scroll_state, P as PRELOAD_PRIORITIES, e as init$1, h as set_version } from "./chunks/singletons-58535dd7.js";
+import { b as base, s as set_assets } from "./chunks/paths-69ad0af0.js";
 function normalize_path(path, trailing_slash) {
   if (path === "/" || trailing_slash === "ignore")
     return path;
@@ -900,8 +901,8 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 };
 const matchers = {};
 const nodes = [
-  () => __vitePreload(() => import("./chunks/0-2fae32bf.js"), true ? ["./chunks/0-2fae32bf.js","./chunks/_layout-9a8b0c19.js","./components/pages/_layout.svelte-071be1cc.js","./chunks/index-fa569249.js","./assets/_layout-c0ad0704.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/1-4ed693a9.js"), true ? ["./chunks/1-4ed693a9.js","./components/error.svelte-69b70258.js","./chunks/index-fa569249.js","./chunks/singletons-9bd8cb5d.js","./chunks/index-f195fbcb.js"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/0-7c41957b.js"), true ? ["./chunks/0-7c41957b.js","./chunks/_layout-9a8b0c19.js","./components/pages/_layout.svelte-277168e2.js","./chunks/index-fa569249.js","./chunks/paths-69ad0af0.js","./assets/_layout-c0ad0704.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/1-957943ea.js"), true ? ["./chunks/1-957943ea.js","./components/error.svelte-173360c0.js","./chunks/index-fa569249.js","./chunks/singletons-58535dd7.js","./chunks/index-f195fbcb.js","./chunks/paths-69ad0af0.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/2-f40f19cb.js"), true ? ["./chunks/2-f40f19cb.js","./components/pages/_page.svelte-6675e8a3.js","./chunks/index-fa569249.js","./chunks/index-f195fbcb.js","./assets/_page-fd46865a.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];

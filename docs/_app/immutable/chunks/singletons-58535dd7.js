@@ -1,9 +1,5 @@
 import { w as writable } from "./index-f195fbcb.js";
-const base = "";
-let assets = base;
-function set_assets(path) {
-  assets = path;
-}
+import { a as assets } from "./paths-69ad0af0.js";
 let version = "";
 function set_version(value) {
   version = value;
@@ -67,14 +63,14 @@ function find_anchor(element, target) {
     parent_element(element);
   }
 }
-function get_link_info(a, base2) {
+function get_link_info(a, base) {
   let url;
   try {
     url = new URL(a instanceof SVGAElement ? a.href.baseVal : a.href, document.baseURI);
   } catch {
   }
   const target = a instanceof SVGAElement ? a.target.baseVal : a.target;
-  const external = !url || !!target || is_external_url(url, base2) || (a.getAttribute("rel") || "").split(/\s+/).includes("external") || a.hasAttribute("download");
+  const external = !url || !!target || is_external_url(url, base) || (a.getAttribute("rel") || "").split(/\s+/).includes("external") || a.hasAttribute("download");
   return { url, external, target };
 }
 function get_router_options(element) {
@@ -151,8 +147,8 @@ function create_updated_store() {
     check
   };
 }
-function is_external_url(url, base2) {
-  return url.origin !== location.origin || !url.pathname.startsWith(base2);
+function is_external_url(url, base) {
+  return url.origin !== location.origin || !url.pathname.startsWith(base);
 }
 function init(opts) {
   opts.client;
@@ -174,12 +170,10 @@ export {
   get_link_info as b,
   get_router_options as c,
   scroll_state as d,
-  base as e,
+  init as e,
   find_anchor as f,
   get_base_uri as g,
-  init as h,
+  set_version as h,
   is_external_url as i,
-  set_assets as j,
-  set_version as k,
   stores as s
 };
