@@ -1,8 +1,6 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, D as create_slot, k as element, a as space, E as head_selector, l as claim_element, h as detach, c as claim_space, n as attr, F as append_hydration, b as insert_hydration, G as update_slot_base, H as get_all_dirty_from_scope, I as get_slot_changes, f as transition_in, t as transition_out } from "../../chunks/index-fa569249.js";
-import { b as base } from "../../chunks/paths-69ad0af0.js";
 const main = "";
 function create_fragment(ctx) {
-  let link;
   let meta;
   let t;
   let current;
@@ -19,7 +17,6 @@ function create_fragment(ctx) {
   );
   return {
     c() {
-      link = element("link");
       meta = element("meta");
       t = space();
       if (default_slot)
@@ -27,8 +24,7 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-n108ae", document.head);
-      link = claim_element(head_nodes, "LINK", { rel: true, href: true, crossorigin: true });
+      const head_nodes = head_selector("svelte-1axfum0", document.head);
       meta = claim_element(head_nodes, "META", { name: true, content: true });
       head_nodes.forEach(detach);
       t = claim_space(nodes);
@@ -37,14 +33,10 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(link, "rel", "manifest");
-      attr(link, "href", "/" + base + "/manifest.webmanifest");
-      attr(link, "crossorigin", "use-credentials");
       attr(meta, "name", "viewport");
       attr(meta, "content", "width=device-width, initial-scale=1.0, viewport-fit=cover");
     },
     m(target, anchor) {
-      append_hydration(document.head, link);
       append_hydration(document.head, meta);
       insert_hydration(target, t, anchor);
       if (default_slot) {
@@ -88,7 +80,6 @@ function create_fragment(ctx) {
       current = false;
     },
     d(detaching) {
-      detach(link);
       detach(meta);
       if (detaching)
         detach(t);
