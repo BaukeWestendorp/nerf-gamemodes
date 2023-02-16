@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, o as onMount, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
 var BombStatus = /* @__PURE__ */ ((BombStatus2) => {
   BombStatus2[BombStatus2["UNPLANTED"] = 0] = "UNPLANTED";
   BombStatus2[BombStatus2["PLANTING"] = 1] = "PLANTING";
@@ -126,8 +126,8 @@ class Wire extends SvelteComponent {
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[18] = list[i];
-  child_ctx[20] = i;
+  child_ctx[17] = list[i];
+  child_ctx[19] = i;
   return child_ctx;
 }
 function create_if_block_5(ctx) {
@@ -503,14 +503,14 @@ function create_each_block(ctx) {
       /*pointerdown_handler*/
       ctx[8](
         /*i*/
-        ctx[20]
+        ctx[19]
       )
     );
   }
   wire = new Wire({
     props: { wireInfo: (
       /*wireInfo*/
-      ctx[18]
+      ctx[17]
     ) }
   });
   wire.$on("pointerdown", pointerdown_handler);
@@ -531,7 +531,7 @@ function create_each_block(ctx) {
       if (dirty & /*wires*/
       32)
         wire_changes.wireInfo = /*wireInfo*/
-        ctx[18];
+        ctx[17];
       wire.$set(wire_changes);
     },
     i(local) {
@@ -796,22 +796,14 @@ function instance($$self, $$props, $$invalidate) {
   let wireToCut;
   let countdown = COUNTDOWN_TIME;
   let wires = [];
-  let lowBeepSound;
-  let highBeepSound;
-  let explosionSound;
-  let defusedSound;
-  onMount(() => {
-    lowBeepSound = new Audio("audio/beepLow.mp3");
-    highBeepSound = new Audio("audio/beepHigh.mp3");
-    explosionSound = new Audio("audio/explosion.mp3");
-    defusedSound = new Audio("audio/defused.mp3");
-  });
+  let audioContext;
   function handleClick() {
     switch (status) {
       case BombStatus.UNPLANTED:
         if (plantTimer !== -1)
           break;
         plantBomb();
+        initializeAudioContext();
         break;
       case BombStatus.COUNTING_DOWN:
         {
@@ -835,9 +827,9 @@ function instance($$self, $$props, $$invalidate) {
       () => {
         $$invalidate(4, countdown -= 1);
         if (countdown < 10) {
-          highBeepSound.play();
+          playAudio("audio/beepHigh.mp3");
         } else {
-          lowBeepSound.play();
+          playAudio("audio/beepLow.mp3");
         }
         if (countdown === 0)
           explode();
@@ -853,7 +845,7 @@ function instance($$self, $$props, $$invalidate) {
   function explode() {
     clearInterval(countdownTimer);
     $$invalidate(0, status = BombStatus.EXPLODED);
-    explosionSound.play();
+    playAudio("audio/explosion.mp3");
   }
   function cutWire(index) {
     var _a;
@@ -868,7 +860,19 @@ function instance($$self, $$props, $$invalidate) {
   function defusedBomb() {
     $$invalidate(0, status = BombStatus.DEFUSED);
     clearInterval(countdownTimer);
-    defusedSound.play();
+    playAudio("audio/defused.mp3");
+  }
+  function initializeAudioContext() {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioContext = new AudioContext();
+    playAudio("audio/beepLow.mp3");
+  }
+  async function playAudio(url) {
+    const source = audioContext.createBufferSource();
+    const audioBuffer = await fetch(url).then((res) => res.arrayBuffer()).then((ArrayBuffer) => audioContext.decodeAudioData(ArrayBuffer));
+    source.buffer = audioBuffer;
+    source.connect(audioContext.destination);
+    source.start();
   }
   const pointerdown_handler = (i) => cutWire(i);
   return [
