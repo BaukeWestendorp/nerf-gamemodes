@@ -332,17 +332,20 @@ function create_if_block_1(ctx) {
   };
 }
 function create_if_block(ctx) {
-  let div1;
-  let h3;
+  let div2;
+  let div0;
   let t0;
-  let t1_value = (
+  let t1;
+  let h3;
+  let t2;
+  let t3_value = (
     /*wireToCut*/
     ctx[3].label + ""
   );
-  let t1;
-  let t2;
   let t3;
-  let div0;
+  let t4;
+  let t5;
+  let div1;
   let current;
   let each_value = (
     /*wires*/
@@ -357,58 +360,84 @@ function create_if_block(ctx) {
   });
   return {
     c() {
-      div1 = element("div");
-      h3 = element("h3");
-      t0 = text("Klik op alle ");
-      t1 = text(t1_value);
-      t2 = text(" draden");
-      t3 = space();
+      div2 = element("div");
       div0 = element("div");
+      t0 = text(
+        /*countdown*/
+        ctx[4]
+      );
+      t1 = space();
+      h3 = element("h3");
+      t2 = text("Klik op alle ");
+      t3 = text(t3_value);
+      t4 = text(" draden");
+      t5 = space();
+      div1 = element("div");
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
       this.h();
     },
     l(nodes) {
-      div1 = claim_element(nodes, "DIV", {});
-      var div1_nodes = children(div1);
-      h3 = claim_element(div1_nodes, "H3", {});
-      var h3_nodes = children(h3);
-      t0 = claim_text(h3_nodes, "Klik op alle ");
-      t1 = claim_text(h3_nodes, t1_value);
-      t2 = claim_text(h3_nodes, " draden");
-      h3_nodes.forEach(detach);
-      t3 = claim_space(div1_nodes);
-      div0 = claim_element(div1_nodes, "DIV", { class: true });
+      div2 = claim_element(nodes, "DIV", {});
+      var div2_nodes = children(div2);
+      div0 = claim_element(div2_nodes, "DIV", { class: true });
       var div0_nodes = children(div0);
-      for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].l(div0_nodes);
-      }
+      t0 = claim_text(
+        div0_nodes,
+        /*countdown*/
+        ctx[4]
+      );
       div0_nodes.forEach(detach);
+      t1 = claim_space(div2_nodes);
+      h3 = claim_element(div2_nodes, "H3", {});
+      var h3_nodes = children(h3);
+      t2 = claim_text(h3_nodes, "Klik op alle ");
+      t3 = claim_text(h3_nodes, t3_value);
+      t4 = claim_text(h3_nodes, " draden");
+      h3_nodes.forEach(detach);
+      t5 = claim_space(div2_nodes);
+      div1 = claim_element(div2_nodes, "DIV", { class: true });
+      var div1_nodes = children(div1);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].l(div1_nodes);
+      }
       div1_nodes.forEach(detach);
+      div2_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div0, "class", "defuser svelte-1dew33f");
+      attr(div0, "class", "status svelte-1dew33f");
+      attr(div1, "class", "defuser svelte-1dew33f");
     },
     m(target, anchor) {
-      insert_hydration(target, div1, anchor);
-      append_hydration(div1, h3);
-      append_hydration(h3, t0);
-      append_hydration(h3, t1);
+      insert_hydration(target, div2, anchor);
+      append_hydration(div2, div0);
+      append_hydration(div0, t0);
+      append_hydration(div2, t1);
+      append_hydration(div2, h3);
       append_hydration(h3, t2);
-      append_hydration(div1, t3);
-      append_hydration(div1, div0);
+      append_hydration(h3, t3);
+      append_hydration(h3, t4);
+      append_hydration(div2, t5);
+      append_hydration(div2, div1);
       for (let i = 0; i < each_blocks.length; i += 1) {
-        each_blocks[i].m(div0, null);
+        each_blocks[i].m(div1, null);
       }
       current = true;
     },
     p(ctx2, dirty) {
+      if (!current || dirty & /*countdown*/
+      16)
+        set_data(
+          t0,
+          /*countdown*/
+          ctx2[4]
+        );
       if ((!current || dirty & /*wireToCut*/
-      8) && t1_value !== (t1_value = /*wireToCut*/
+      8) && t3_value !== (t3_value = /*wireToCut*/
       ctx2[3].label + ""))
-        set_data(t1, t1_value);
+        set_data(t3, t3_value);
       if (dirty & /*wires, cutWire*/
       160) {
         each_value = /*wires*/
@@ -423,7 +452,7 @@ function create_if_block(ctx) {
             each_blocks[i] = create_each_block(child_ctx);
             each_blocks[i].c();
             transition_in(each_blocks[i], 1);
-            each_blocks[i].m(div0, null);
+            each_blocks[i].m(div1, null);
           }
         }
         group_outros();
@@ -450,7 +479,7 @@ function create_if_block(ctx) {
     },
     d(detaching) {
       if (detaching)
-        detach(div1);
+        detach(div2);
       destroy_each(each_blocks, detaching);
     }
   };
@@ -796,8 +825,6 @@ function instance($$self, $$props, $$invalidate) {
   }
   function defuseBomb() {
     $$invalidate(0, status = BombStatus.DEFUSING);
-    clearInterval(countdownTimer);
-    $$invalidate(4, countdown = COUNTDOWN_TIME);
     $$invalidate(5, wires = generateWires(6));
     $$invalidate(3, wireToCut = getRandomWire());
   }

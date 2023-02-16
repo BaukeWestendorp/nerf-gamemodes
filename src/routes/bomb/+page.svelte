@@ -50,8 +50,6 @@
 
 	function defuseBomb() {
 		status = BombStatus.DEFUSING;
-		clearInterval(countdownTimer);
-		countdown = COUNTDOWN_TIME;
 		wires = generateWires(6);
 		wireToCut = getRandomWire();
 	}
@@ -116,6 +114,7 @@
 
 	{#if status === BombStatus.DEFUSING}
 		<div>
+			<div class="status">{countdown}</div>
 			<h3>Klik op alle {wireToCut.label} draden</h3>
 			<div class="defuser">
 				{#each wires as wireInfo, i}

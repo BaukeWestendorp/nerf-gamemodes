@@ -903,7 +903,7 @@ const nodes = [
   () => __vitePreload(() => import("./chunks/0-fe97b466.js"), true ? ["./chunks/0-fe97b466.js","./chunks/_layout-9a8b0c19.js","./components/pages/_layout.svelte-74512efa.js","./chunks/index-edf72ffa.js","./assets/_layout-507bc320.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/1-bc9a0c33.js"), true ? ["./chunks/1-bc9a0c33.js","./components/error.svelte-a46efcab.js","./chunks/index-edf72ffa.js","./chunks/singletons-555b43bd.js","./chunks/index-42fc002e.js"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/2-ac79db48.js"), true ? ["./chunks/2-ac79db48.js","./components/pages/_page.svelte-f7219171.js","./chunks/index-edf72ffa.js","./assets/_page-5dd81f33.css"] : void 0, import.meta.url),
-  () => __vitePreload(() => import("./chunks/3-efc1fe4e.js"), true ? ["./chunks/3-efc1fe4e.js","./components/pages/bomb/_page.svelte-6fb3ee20.js","./chunks/index-edf72ffa.js","./assets/_page-385fe8b4.css"] : void 0, import.meta.url),
+  () => __vitePreload(() => import("./chunks/3-7e2f3e98.js"), true ? ["./chunks/3-7e2f3e98.js","./components/pages/bomb/_page.svelte-2410d030.js","./chunks/index-edf72ffa.js","./assets/_page-385fe8b4.css"] : void 0, import.meta.url),
   () => __vitePreload(() => import("./chunks/4-c172d3d8.js"), true ? ["./chunks/4-c172d3d8.js","./components/pages/koth/_page.svelte-542dfd34.js","./chunks/index-edf72ffa.js","./chunks/index-42fc002e.js","./assets/_page-8f3f9f07.css"] : void 0, import.meta.url)
 ];
 const server_loads = [];
