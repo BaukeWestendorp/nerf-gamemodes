@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { BombStatus, generateWires, getRandomWire, type WireInfo } from '../../lib/bomb/bomb';
 	import Wire from '../../lib/bomb/Wire.svelte';
-	import { page } from '$app/stores';
 
-	const PLANT_TIME = $page.url.searchParams.get('plant') ?? 5;
-	const COUNTDOWN_TIME = $page.url.searchParams.get('countdown') ?? 60;
+	const PLANT_TIME = 5;
+	const COUNTDOWN_TIME = 60;
 
 	let status = BombStatus.UNPLANTED;
 	let plantTimer = -1;

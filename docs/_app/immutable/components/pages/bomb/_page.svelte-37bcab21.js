@@ -1,5 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, J as component_subscribe, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
-import { p as page } from "../../../chunks/stores-6d02fb31.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
 var BombStatus = /* @__PURE__ */ ((BombStatus2) => {
   BombStatus2[BombStatus2["UNPLANTED"] = 0] = "UNPLANTED";
   BombStatus2[BombStatus2["PLANTING"] = 1] = "PLANTING";
@@ -127,8 +126,8 @@ class Wire extends SvelteComponent {
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[22] = list[i];
-  child_ctx[24] = i;
+  child_ctx[19] = list[i];
+  child_ctx[21] = i;
   return child_ctx;
 }
 function create_if_block_5(ctx) {
@@ -451,7 +450,7 @@ function create_if_block(ctx) {
       ctx2[3].label + ""))
         set_data(t3, t3_value);
       if (dirty & /*wires, cutWire*/
-      544) {
+      160) {
         each_value = /*wires*/
         ctx2[5];
         let i;
@@ -502,16 +501,16 @@ function create_each_block(ctx) {
   function pointerdown_handler() {
     return (
       /*pointerdown_handler*/
-      ctx[10](
+      ctx[8](
         /*i*/
-        ctx[24]
+        ctx[21]
       )
     );
   }
   wire = new Wire({
     props: { wireInfo: (
       /*wireInfo*/
-      ctx[22]
+      ctx[19]
     ) }
   });
   wire.$on("pointerdown", pointerdown_handler);
@@ -532,7 +531,7 @@ function create_each_block(ctx) {
       if (dirty & /*wires*/
       32)
         wire_changes.wireInfo = /*wireInfo*/
-        ctx[22];
+        ctx[19];
       wire.$set(wire_changes);
     },
     i(local) {
@@ -626,18 +625,8 @@ function create_fragment(ctx) {
       attr(div0, "class", "overlay svelte-7ggqjh");
       attr(div1, "class", "status svelte-7ggqjh");
       attr(div2, "class", "bomb svelte-7ggqjh");
-      set_style(
-        div2,
-        "--plant-time",
-        /*PLANT_TIME*/
-        ctx[6] + "s"
-      );
-      set_style(
-        div2,
-        "--countdown-time",
-        /*COUNTDOWN_TIME*/
-        ctx[7] + "s"
-      );
+      set_style(div2, "--plant-time", PLANT_TIME + "s");
+      set_style(div2, "--countdown-time", COUNTDOWN_TIME + "s");
       toggle_class(
         div2,
         "planting",
@@ -687,7 +676,7 @@ function create_fragment(ctx) {
           div2,
           "pointerdown",
           /*handleClick*/
-          ctx[8]
+          ctx[6]
         );
         mounted = true;
       }
@@ -798,11 +787,9 @@ function create_fragment(ctx) {
     }
   };
 }
+const PLANT_TIME = 5;
+const COUNTDOWN_TIME = 60;
 function instance($$self, $$props, $$invalidate) {
-  let $page;
-  component_subscribe($$self, page, ($$value) => $$invalidate(15, $page = $$value));
-  const PLANT_TIME = $page.url.searchParams.get("plant") ?? 5;
-  const COUNTDOWN_TIME = $page.url.searchParams.get("countdown") ?? 60;
   let status = BombStatus.UNPLANTED;
   let plantTimer = -1;
   let countdownTimer = -1;
@@ -892,8 +879,6 @@ function instance($$self, $$props, $$invalidate) {
     wireToCut,
     countdown,
     wires,
-    PLANT_TIME,
-    COUNTDOWN_TIME,
     handleClick,
     cutWire,
     pointerdown_handler
