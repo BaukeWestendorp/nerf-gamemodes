@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { BombStatus, generateWires, getRandomWire, type WireInfo } from '../../lib/bomb/bomb';
 	import Wire from '../../lib/bomb/Wire.svelte';
+	import { page } from '$app/stores';
 
-	const PLANT_TIME = 1;
-	const COUNTDOWN_TIME = 15;
+	const PLANT_TIME = $page.url.searchParams.get('plant') ?? 5;
+	const COUNTDOWN_TIME = $page.url.searchParams.get('countdown') ?? 60;
 
 	let status = BombStatus.UNPLANTED;
 	let plantTimer = -1;
@@ -13,14 +14,25 @@
 
 	let countdown = COUNTDOWN_TIME;
 	let wires: (WireInfo | null)[] = [];
-	let audioContext;
+
+	let lowBeepSound: HTMLAudioElement;
+	let highBeepSound: HTMLAudioElement;
+	let explosionSound: HTMLAudioElement;
+	let defusedSound: HTMLAudioElement;
+
+	function initializeSounds() {
+		lowBeepSound = new Audio('audio/beepLow.mp3');
+		highBeepSound = new Audio('audio/beepHigh.mp3');
+		explosionSound = new Audio('audio/explosion.mp3');
+		defusedSound = new Audio('audio/defused.mp3');
+	}
 
 	function handleClick() {
 		switch (status) {
 			case BombStatus.UNPLANTED:
 				if (plantTimer !== -1) break;
+				initializeSounds();
 				plantBomb();
-				initializeAudioContext();
 
 				break;
 			case BombStatus.COUNTING_DOWN:
@@ -45,9 +57,9 @@
 		countdownTimer = setInterval(() => {
 			countdown -= 1;
 			if (countdown < 10) {
-				playAudio('audio/beepHigh.mp3');
+				highBeepSound.play();
 			} else {
-				playAudio('audio/beepLow.mp3');
+				lowBeepSound.play();
 			}
 			if (countdown === 0) explode();
 		}, 1000);
@@ -62,7 +74,7 @@
 	function explode() {
 		clearInterval(countdownTimer);
 		status = BombStatus.EXPLODED;
-		playAudio('audio/explosion.mp3');
+		explosionSound.play();
 	}
 
 	function cutWire(index: number) {
@@ -80,24 +92,7 @@
 	function defusedBomb() {
 		status = BombStatus.DEFUSED;
 		clearInterval(countdownTimer);
-		playAudio('audio/defused.mp3');
-	}
-
-	function initializeAudioContext() {
-		const AudioContext = window.AudioContext || window.webkitAudioContext;
-		audioContext = new AudioContext();
-		playAudio('audio/beepLow.mp3');
-	}
-
-	async function playAudio(url) {
-		const source = audioContext.createBufferSource();
-		const audioBuffer = await fetch(url)
-			.then((res) => res.arrayBuffer())
-			.then((ArrayBuffer) => audioContext.decodeAudioData(ArrayBuffer));
-
-		source.buffer = audioBuffer;
-		source.connect(audioContext.destination);
-		source.start();
+		defusedSound.play();
 	}
 </script>
 

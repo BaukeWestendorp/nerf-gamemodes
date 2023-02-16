@@ -1,24 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, b as insert_hydration, F as append_hydration, u as set_data, C as noop, J as component_subscribe } from "../chunks/index-edf72ffa.js";
-import { s as stores } from "../chunks/singletons-555b43bd.js";
-const getStores = () => {
-  const stores$1 = stores;
-  return {
-    page: {
-      subscribe: stores$1.page.subscribe
-    },
-    navigating: {
-      subscribe: stores$1.navigating.subscribe
-    },
-    updated: stores$1.updated
-  };
-};
-const page = {
-  /** @param {(value: any) => void} fn */
-  subscribe(fn) {
-    const store = getStores().page;
-    return store.subscribe(fn);
-  }
-};
+import { p as page } from "../chunks/stores-6d02fb31.js";
 function create_fragment(ctx) {
   var _a;
   let h1;
@@ -88,12 +69,12 @@ function instance($$self, $$props, $$invalidate) {
   component_subscribe($$self, page, ($$value) => $$invalidate(0, $page = $$value));
   return [$page];
 }
-let Error$1 = class Error extends SvelteComponent {
+class Error extends SvelteComponent {
   constructor(options) {
     super();
     init(this, options, instance, create_fragment, safe_not_equal, {});
   }
-};
+}
 export {
-  Error$1 as default
+  Error as default
 };
