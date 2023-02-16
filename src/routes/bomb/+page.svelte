@@ -90,19 +90,29 @@
 >
 	<div class="overlay" />
 
-	<h3 class="status">
+	<div class="status">
 		{#if status === BombStatus.UNPLANTED}
-			Klik om de bom te activeren
+			<p>Klik om de bom te activeren</p>
 		{:else if status === BombStatus.PLANTING}
-			Activeren...
+			<p>Activeren...</p>
 		{:else if status === BombStatus.COUNTING_DOWN}
 			{countdown}
 		{:else if status === BombStatus.EXPLODED}
-			Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss
+			<h1>GEËXPLODEERD</h1>
+			<p>Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss</p>
+			<img
+				src="https://bestanimations.com/Military/Explosions/atomic-mushroom-cloud-nuclear-explosion-4-3.gif"
+				alt="explosie"
+			/>
 		{:else if status === BombStatus.DEFUSED}
-			Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel
+			<h1>DEFUSED</h1>
+			<p>Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel</p>
+			<img
+				src="https://1.bp.blogspot.com/-NN1LDIBA5Jg/V0Mo5tQPLCI/AAAAAAAEfB0/RxUQiP-Ucx4aW-gRBTQWRIunbEsTM6qvwCLcB/s400/Fail%2Bgif%2B00157.gif"
+				alt="explosie"
+			/>
 		{/if}
-	</h3>
+	</div>
 
 	{#if status === BombStatus.DEFUSING}
 		<div>
@@ -130,6 +140,7 @@
 	.status {
 		color: white;
 		font-size: 48px;
+		font-weight: bold;
 		text-align: center;
 	}
 

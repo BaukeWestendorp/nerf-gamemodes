@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component } from "../../../chunks/index-2cc83bec.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
 var BombStatus = /* @__PURE__ */ ((BombStatus2) => {
   BombStatus2[BombStatus2["UNPLANTED"] = 0] = "UNPLANTED";
   BombStatus2[BombStatus2["PLANTING"] = 1] = "PLANTING";
@@ -122,40 +122,128 @@ function get_each_context(ctx, list, i) {
   return child_ctx;
 }
 function create_if_block_5(ctx) {
-  let t;
+  let h1;
+  let t0;
+  let t1;
+  let p;
+  let t2;
+  let t3;
+  let img;
+  let img_src_value;
   return {
     c() {
-      t = text("Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      h1 = element("h1");
+      t0 = text("DEFUSED");
+      t1 = space();
+      p = element("p");
+      t2 = text("Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      t3 = space();
+      img = element("img");
+      this.h();
     },
     l(nodes) {
-      t = claim_text(nodes, "Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      h1 = claim_element(nodes, "H1", {});
+      var h1_nodes = children(h1);
+      t0 = claim_text(h1_nodes, "DEFUSED");
+      h1_nodes.forEach(detach);
+      t1 = claim_space(nodes);
+      p = claim_element(nodes, "P", {});
+      var p_nodes = children(p);
+      t2 = claim_text(p_nodes, "Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      p_nodes.forEach(detach);
+      t3 = claim_space(nodes);
+      img = claim_element(nodes, "IMG", { src: true, alt: true });
+      this.h();
+    },
+    h() {
+      if (!src_url_equal(img.src, img_src_value = "https://1.bp.blogspot.com/-NN1LDIBA5Jg/V0Mo5tQPLCI/AAAAAAAEfB0/RxUQiP-Ucx4aW-gRBTQWRIunbEsTM6qvwCLcB/s400/Fail%2Bgif%2B00157.gif"))
+        attr(img, "src", img_src_value);
+      attr(img, "alt", "explosie");
     },
     m(target, anchor) {
-      insert_hydration(target, t, anchor);
+      insert_hydration(target, h1, anchor);
+      append_hydration(h1, t0);
+      insert_hydration(target, t1, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t2);
+      insert_hydration(target, t3, anchor);
+      insert_hydration(target, img, anchor);
     },
     p: noop,
     d(detaching) {
       if (detaching)
-        detach(t);
+        detach(h1);
+      if (detaching)
+        detach(t1);
+      if (detaching)
+        detach(p);
+      if (detaching)
+        detach(t3);
+      if (detaching)
+        detach(img);
     }
   };
 }
 function create_if_block_4(ctx) {
-  let t;
+  let h1;
+  let t0;
+  let t1;
+  let p;
+  let t2;
+  let t3;
+  let img;
+  let img_src_value;
   return {
     c() {
-      t = text("Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      h1 = element("h1");
+      t0 = text("GEËXPLODEERD");
+      t1 = space();
+      p = element("p");
+      t2 = text("Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      t3 = space();
+      img = element("img");
+      this.h();
     },
     l(nodes) {
-      t = claim_text(nodes, "Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      h1 = claim_element(nodes, "H1", {});
+      var h1_nodes = children(h1);
+      t0 = claim_text(h1_nodes, "GEËXPLODEERD");
+      h1_nodes.forEach(detach);
+      t1 = claim_space(nodes);
+      p = claim_element(nodes, "P", {});
+      var p_nodes = children(p);
+      t2 = claim_text(p_nodes, "Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      p_nodes.forEach(detach);
+      t3 = claim_space(nodes);
+      img = claim_element(nodes, "IMG", { src: true, alt: true });
+      this.h();
+    },
+    h() {
+      if (!src_url_equal(img.src, img_src_value = "https://bestanimations.com/Military/Explosions/atomic-mushroom-cloud-nuclear-explosion-4-3.gif"))
+        attr(img, "src", img_src_value);
+      attr(img, "alt", "explosie");
     },
     m(target, anchor) {
-      insert_hydration(target, t, anchor);
+      insert_hydration(target, h1, anchor);
+      append_hydration(h1, t0);
+      insert_hydration(target, t1, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t2);
+      insert_hydration(target, t3, anchor);
+      insert_hydration(target, img, anchor);
     },
     p: noop,
     d(detaching) {
       if (detaching)
-        detach(t);
+        detach(h1);
+      if (detaching)
+        detach(t1);
+      if (detaching)
+        detach(p);
+      if (detaching)
+        detach(t3);
+      if (detaching)
+        detach(img);
     }
   };
 }
@@ -194,40 +282,52 @@ function create_if_block_3(ctx) {
   };
 }
 function create_if_block_2(ctx) {
+  let p;
   let t;
   return {
     c() {
+      p = element("p");
       t = text("Activeren...");
     },
     l(nodes) {
-      t = claim_text(nodes, "Activeren...");
+      p = claim_element(nodes, "P", {});
+      var p_nodes = children(p);
+      t = claim_text(p_nodes, "Activeren...");
+      p_nodes.forEach(detach);
     },
     m(target, anchor) {
-      insert_hydration(target, t, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t);
     },
     p: noop,
     d(detaching) {
       if (detaching)
-        detach(t);
+        detach(p);
     }
   };
 }
 function create_if_block_1(ctx) {
+  let p;
   let t;
   return {
     c() {
+      p = element("p");
       t = text("Klik om de bom te activeren");
     },
     l(nodes) {
-      t = claim_text(nodes, "Klik om de bom te activeren");
+      p = claim_element(nodes, "P", {});
+      var p_nodes = children(p);
+      t = claim_text(p_nodes, "Klik om de bom te activeren");
+      p_nodes.forEach(detach);
     },
     m(target, anchor) {
-      insert_hydration(target, t, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t);
     },
     p: noop,
     d(detaching) {
       if (detaching)
-        detach(t);
+        detach(p);
     }
   };
 }
@@ -289,7 +389,7 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "defuser svelte-1lwecnc");
+      attr(div0, "class", "defuser svelte-1pjdtau");
     },
     m(target, anchor) {
       insert_hydration(target, div1, anchor);
@@ -410,10 +510,10 @@ function create_each_block(ctx) {
   };
 }
 function create_fragment(ctx) {
-  let div1;
+  let div2;
   let div0;
   let t0;
-  let h3;
+  let div1;
   let t1;
   let current;
   let mounted;
@@ -453,10 +553,10 @@ function create_fragment(ctx) {
   );
   return {
     c() {
-      div1 = element("div");
+      div2 = element("div");
       div0 = element("div");
       t0 = space();
-      h3 = element("h3");
+      div1 = element("div");
       if (if_block0)
         if_block0.c();
       t1 = space();
@@ -465,75 +565,75 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      div1 = claim_element(nodes, "DIV", { class: true, style: true });
-      var div1_nodes = children(div1);
-      div0 = claim_element(div1_nodes, "DIV", { class: true });
+      div2 = claim_element(nodes, "DIV", { class: true, style: true });
+      var div2_nodes = children(div2);
+      div0 = claim_element(div2_nodes, "DIV", { class: true });
       children(div0).forEach(detach);
-      t0 = claim_space(div1_nodes);
-      h3 = claim_element(div1_nodes, "H3", { class: true });
-      var h3_nodes = children(h3);
+      t0 = claim_space(div2_nodes);
+      div1 = claim_element(div2_nodes, "DIV", { class: true });
+      var div1_nodes = children(div1);
       if (if_block0)
-        if_block0.l(h3_nodes);
-      h3_nodes.forEach(detach);
-      t1 = claim_space(div1_nodes);
-      if (if_block1)
-        if_block1.l(div1_nodes);
+        if_block0.l(div1_nodes);
       div1_nodes.forEach(detach);
+      t1 = claim_space(div2_nodes);
+      if (if_block1)
+        if_block1.l(div2_nodes);
+      div2_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div0, "class", "overlay svelte-1lwecnc");
-      attr(h3, "class", "status svelte-1lwecnc");
-      attr(div1, "class", "bomb svelte-1lwecnc");
-      set_style(div1, "--plant-time", PLANT_TIME + "s");
-      set_style(div1, "--countdown-time", COUNTDOWN_TIME + "s");
+      attr(div0, "class", "overlay svelte-1pjdtau");
+      attr(div1, "class", "status svelte-1pjdtau");
+      attr(div2, "class", "bomb svelte-1pjdtau");
+      set_style(div2, "--plant-time", PLANT_TIME + "s");
+      set_style(div2, "--countdown-time", COUNTDOWN_TIME + "s");
       toggle_class(
-        div1,
+        div2,
         "planting",
         /*status*/
         ctx[0] === BombStatus.PLANTING && /*plantTimer*/
         ctx[1] !== -1
       );
       toggle_class(
-        div1,
+        div2,
         "counting-down",
         /*status*/
         ctx[0] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
         ctx[2] !== -1
       );
       toggle_class(
-        div1,
+        div2,
         "defusing",
         /*status*/
         ctx[0] === BombStatus.DEFUSING
       );
       toggle_class(
-        div1,
+        div2,
         "exploded",
         /*status*/
         ctx[0] === BombStatus.EXPLODED
       );
       toggle_class(
-        div1,
+        div2,
         "defused",
         /*status*/
         ctx[0] === BombStatus.DEFUSED
       );
     },
     m(target, anchor) {
-      insert_hydration(target, div1, anchor);
-      append_hydration(div1, div0);
-      append_hydration(div1, t0);
-      append_hydration(div1, h3);
+      insert_hydration(target, div2, anchor);
+      append_hydration(div2, div0);
+      append_hydration(div2, t0);
+      append_hydration(div2, div1);
       if (if_block0)
-        if_block0.m(h3, null);
-      append_hydration(div1, t1);
+        if_block0.m(div1, null);
+      append_hydration(div2, t1);
       if (if_block1)
-        if_block1.m(div1, null);
+        if_block1.m(div2, null);
       current = true;
       if (!mounted) {
         dispose = listen(
-          div1,
+          div2,
           "pointerdown",
           /*handleClick*/
           ctx[6]
@@ -550,7 +650,7 @@ function create_fragment(ctx) {
         if_block0 = current_block_type && current_block_type(ctx2);
         if (if_block0) {
           if_block0.c();
-          if_block0.m(h3, null);
+          if_block0.m(div1, null);
         }
       }
       if (
@@ -567,7 +667,7 @@ function create_fragment(ctx) {
           if_block1 = create_if_block(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
-          if_block1.m(div1, null);
+          if_block1.m(div2, null);
         }
       } else if (if_block1) {
         group_outros();
@@ -579,7 +679,7 @@ function create_fragment(ctx) {
       if (!current || dirty & /*status, BombStatus, plantTimer*/
       3) {
         toggle_class(
-          div1,
+          div2,
           "planting",
           /*status*/
           ctx2[0] === BombStatus.PLANTING && /*plantTimer*/
@@ -589,7 +689,7 @@ function create_fragment(ctx) {
       if (!current || dirty & /*status, BombStatus, countdownTimer*/
       5) {
         toggle_class(
-          div1,
+          div2,
           "counting-down",
           /*status*/
           ctx2[0] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
@@ -599,7 +699,7 @@ function create_fragment(ctx) {
       if (!current || dirty & /*status, BombStatus*/
       1) {
         toggle_class(
-          div1,
+          div2,
           "defusing",
           /*status*/
           ctx2[0] === BombStatus.DEFUSING
@@ -608,7 +708,7 @@ function create_fragment(ctx) {
       if (!current || dirty & /*status, BombStatus*/
       1) {
         toggle_class(
-          div1,
+          div2,
           "exploded",
           /*status*/
           ctx2[0] === BombStatus.EXPLODED
@@ -617,7 +717,7 @@ function create_fragment(ctx) {
       if (!current || dirty & /*status, BombStatus*/
       1) {
         toggle_class(
-          div1,
+          div2,
           "defused",
           /*status*/
           ctx2[0] === BombStatus.DEFUSED
@@ -636,7 +736,7 @@ function create_fragment(ctx) {
     },
     d(detaching) {
       if (detaching)
-        detach(div1);
+        detach(div2);
       if (if_block0) {
         if_block0.d();
       }

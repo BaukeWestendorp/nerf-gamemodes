@@ -20,6 +20,14 @@ function is_function(thing) {
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
+let src_url_equal_anchor;
+function src_url_equal(element_src, url) {
+  if (!src_url_equal_anchor) {
+    src_url_equal_anchor = document.createElement("a");
+  }
+  src_url_equal_anchor.href = url;
+  return element_src === src_url_equal_anchor.href;
+}
 function is_empty(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -600,7 +608,8 @@ export {
   bubble as L,
   toggle_class as M,
   destroy_each as N,
-  set_store_value as O,
+  src_url_equal as O,
+  set_store_value as P,
   SvelteComponent as S,
   space as a,
   insert_hydration as b,
