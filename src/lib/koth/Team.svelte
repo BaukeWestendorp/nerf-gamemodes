@@ -63,8 +63,10 @@
 
 	.overlay {
 		position: absolute;
-		inset: 0;
+		top: 0;
 		left: 100%;
+		right: 0;
+		bottom: 0;
 		background: #fff4;
 	}
 

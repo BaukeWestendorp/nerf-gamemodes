@@ -45,8 +45,8 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h() {
-      attr(div1, "class", "overlay svelte-1hnw16n");
-      attr(div2, "class", "team svelte-1hnw16n");
+      attr(div1, "class", "overlay svelte-372ksy");
+      attr(div2, "class", "team svelte-372ksy");
       set_style(
         div2,
         "--color",

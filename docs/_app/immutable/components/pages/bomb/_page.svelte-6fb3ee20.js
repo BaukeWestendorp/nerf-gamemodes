@@ -389,7 +389,7 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "defuser svelte-1pjdtau");
+      attr(div0, "class", "defuser svelte-1dew33f");
     },
     m(target, anchor) {
       insert_hydration(target, div1, anchor);
@@ -582,9 +582,9 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "overlay svelte-1pjdtau");
-      attr(div1, "class", "status svelte-1pjdtau");
-      attr(div2, "class", "bomb svelte-1pjdtau");
+      attr(div0, "class", "overlay svelte-1dew33f");
+      attr(div1, "class", "status svelte-1dew33f");
+      attr(div2, "class", "bomb svelte-1dew33f");
       set_style(div2, "--plant-time", PLANT_TIME + "s");
       set_style(div2, "--countdown-time", COUNTDOWN_TIME + "s");
       toggle_class(
