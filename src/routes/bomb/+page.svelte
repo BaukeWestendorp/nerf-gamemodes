@@ -2,8 +2,8 @@
 	import { BombStatus, generateWires, getRandomWire, type WireInfo } from '../../lib/bomb/bomb';
 	import Wire from '../../lib/bomb/Wire.svelte';
 
-	const PLANT_TIME = 5;
-	const COUNTDOWN_TIME = 60;
+	let PLANT_TIME = 5;
+	let COUNTDOWN_TIME = 60;
 
 	let status = BombStatus.UNPLANTED;
 	let plantTimer = -1;
@@ -94,6 +94,11 @@
 		defusedSound.play();
 	}
 </script>
+
+<div class="settings">
+	<input type="number" bind:value={PLANT_TIME} />
+	<input type="number" bind:value={COUNTDOWN_TIME} />
+</div>
 
 <div
 	class="bomb"
@@ -196,5 +201,12 @@
 
 	.counting-down .overlay {
 		right: 100%;
+	}
+
+	.settings {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
 	}
 </style>

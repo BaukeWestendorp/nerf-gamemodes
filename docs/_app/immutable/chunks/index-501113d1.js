@@ -217,6 +217,9 @@ function attr(node, attribute, value) {
   else if (node.getAttribute(attribute) !== value)
     node.setAttribute(attribute, value);
 }
+function to_number(value) {
+  return value === "" ? null : +value;
+}
 function children(element2) {
   return Array.from(element2.childNodes);
 }
@@ -308,6 +311,9 @@ function set_data(text2, data) {
   data = "" + data;
   if (text2.wholeText !== data)
     text2.data = data;
+}
+function set_input_value(input, value) {
+  input.value = value == null ? "" : value;
 }
 function set_style(node, key, value, important) {
   if (value === null) {
@@ -607,10 +613,13 @@ export {
   listen as K,
   bubble as L,
   toggle_class as M,
-  destroy_each as N,
-  src_url_equal as O,
-  set_store_value as P,
+  set_input_value as N,
+  to_number as O,
+  run_all as P,
+  destroy_each as Q,
+  src_url_equal as R,
   SvelteComponent as S,
+  set_store_value as T,
   space as a,
   insert_hydration as b,
   claim_space as c,

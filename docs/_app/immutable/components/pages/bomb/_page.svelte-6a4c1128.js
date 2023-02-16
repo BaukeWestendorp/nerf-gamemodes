@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, f as transition_in, t as transition_out, d as check_outros, q as text, r as claim_text, u as set_data, g as group_outros, N as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, O as src_url_equal } from "../../../chunks/index-edf72ffa.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, p as set_style, b as insert_hydration, K as listen, C as noop, L as bubble, a as space, c as claim_space, M as toggle_class, F as append_hydration, N as set_input_value, O as to_number, f as transition_in, t as transition_out, d as check_outros, P as run_all, q as text, r as claim_text, u as set_data, g as group_outros, Q as destroy_each, x as create_component, y as claim_component, z as mount_component, A as destroy_component, R as src_url_equal } from "../../../chunks/index-501113d1.js";
 var BombStatus = /* @__PURE__ */ ((BombStatus2) => {
   BombStatus2[BombStatus2["UNPLANTED"] = 0] = "UNPLANTED";
   BombStatus2[BombStatus2["PLANTING"] = 1] = "PLANTING";
@@ -126,8 +126,8 @@ class Wire extends SvelteComponent {
 const _page_svelte_svelte_type_style_lang = "";
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
-  child_ctx[19] = list[i];
-  child_ctx[21] = i;
+  child_ctx[23] = list[i];
+  child_ctx[25] = i;
   return child_ctx;
 }
 function create_if_block_5(ctx) {
@@ -262,14 +262,14 @@ function create_if_block_3(ctx) {
     c() {
       t = text(
         /*countdown*/
-        ctx[4]
+        ctx[6]
       );
     },
     l(nodes) {
       t = claim_text(
         nodes,
         /*countdown*/
-        ctx[4]
+        ctx[6]
       );
     },
     m(target, anchor) {
@@ -277,11 +277,11 @@ function create_if_block_3(ctx) {
     },
     p(ctx2, dirty) {
       if (dirty & /*countdown*/
-      16)
+      64)
         set_data(
           t,
           /*countdown*/
-          ctx2[4]
+          ctx2[6]
         );
     },
     d(detaching) {
@@ -349,7 +349,7 @@ function create_if_block(ctx) {
   let t2;
   let t3_value = (
     /*wireToCut*/
-    ctx[3].label + ""
+    ctx[5].label + ""
   );
   let t3;
   let t4;
@@ -358,7 +358,7 @@ function create_if_block(ctx) {
   let current;
   let each_value = (
     /*wires*/
-    ctx[5]
+    ctx[7]
   );
   let each_blocks = [];
   for (let i = 0; i < each_value.length; i += 1) {
@@ -373,7 +373,7 @@ function create_if_block(ctx) {
       div0 = element("div");
       t0 = text(
         /*countdown*/
-        ctx[4]
+        ctx[6]
       );
       t1 = space();
       h3 = element("h3");
@@ -395,7 +395,7 @@ function create_if_block(ctx) {
       t0 = claim_text(
         div0_nodes,
         /*countdown*/
-        ctx[4]
+        ctx[6]
       );
       div0_nodes.forEach(detach);
       t1 = claim_space(div2_nodes);
@@ -416,10 +416,10 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "status svelte-7ggqjh");
-      attr(h3, "class", "status svelte-7ggqjh");
-      attr(div1, "class", "wirebox svelte-7ggqjh");
-      attr(div2, "class", "defuser svelte-7ggqjh");
+      attr(div0, "class", "status svelte-c696o8");
+      attr(h3, "class", "status svelte-c696o8");
+      attr(div1, "class", "wirebox svelte-c696o8");
+      attr(div2, "class", "defuser svelte-c696o8");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
@@ -439,20 +439,20 @@ function create_if_block(ctx) {
     },
     p(ctx2, dirty) {
       if (!current || dirty & /*countdown*/
-      16)
+      64)
         set_data(
           t0,
           /*countdown*/
-          ctx2[4]
+          ctx2[6]
         );
       if ((!current || dirty & /*wireToCut*/
-      8) && t3_value !== (t3_value = /*wireToCut*/
-      ctx2[3].label + ""))
+      32) && t3_value !== (t3_value = /*wireToCut*/
+      ctx2[5].label + ""))
         set_data(t3, t3_value);
       if (dirty & /*wires, cutWire*/
-      160) {
+      640) {
         each_value = /*wires*/
-        ctx2[5];
+        ctx2[7];
         let i;
         for (i = 0; i < each_value.length; i += 1) {
           const child_ctx = get_each_context(ctx2, each_value, i);
@@ -501,16 +501,16 @@ function create_each_block(ctx) {
   function pointerdown_handler() {
     return (
       /*pointerdown_handler*/
-      ctx[8](
+      ctx[12](
         /*i*/
-        ctx[21]
+        ctx[25]
       )
     );
   }
   wire = new Wire({
     props: { wireInfo: (
       /*wireInfo*/
-      ctx[19]
+      ctx[23]
     ) }
   });
   wire.$on("pointerdown", pointerdown_handler);
@@ -529,9 +529,9 @@ function create_each_block(ctx) {
       ctx = new_ctx;
       const wire_changes = {};
       if (dirty & /*wires*/
-      32)
+      128)
         wire_changes.wireInfo = /*wireInfo*/
-        ctx[19];
+        ctx[23];
       wire.$set(wire_changes);
     },
     i(local) {
@@ -550,38 +550,43 @@ function create_each_block(ctx) {
   };
 }
 function create_fragment(ctx) {
-  let div2;
   let div0;
+  let input0;
   let t0;
-  let div1;
+  let input1;
   let t1;
+  let div3;
+  let div1;
+  let t2;
+  let div2;
+  let t3;
   let current;
   let mounted;
   let dispose;
   function select_block_type(ctx2, dirty) {
     if (
       /*status*/
-      ctx2[0] === BombStatus.UNPLANTED
+      ctx2[2] === BombStatus.UNPLANTED
     )
       return create_if_block_1;
     if (
       /*status*/
-      ctx2[0] === BombStatus.PLANTING
+      ctx2[2] === BombStatus.PLANTING
     )
       return create_if_block_2;
     if (
       /*status*/
-      ctx2[0] === BombStatus.COUNTING_DOWN
+      ctx2[2] === BombStatus.COUNTING_DOWN
     )
       return create_if_block_3;
     if (
       /*status*/
-      ctx2[0] === BombStatus.EXPLODED
+      ctx2[2] === BombStatus.EXPLODED
     )
       return create_if_block_4;
     if (
       /*status*/
-      ctx2[0] === BombStatus.DEFUSED
+      ctx2[2] === BombStatus.DEFUSED
     )
       return create_if_block_5;
   }
@@ -589,99 +594,171 @@ function create_fragment(ctx) {
   let if_block0 = current_block_type && current_block_type(ctx);
   let if_block1 = (
     /*status*/
-    ctx[0] === BombStatus.DEFUSING && create_if_block(ctx)
+    ctx[2] === BombStatus.DEFUSING && create_if_block(ctx)
   );
   return {
     c() {
-      div2 = element("div");
       div0 = element("div");
+      input0 = element("input");
       t0 = space();
+      input1 = element("input");
+      t1 = space();
+      div3 = element("div");
       div1 = element("div");
+      t2 = space();
+      div2 = element("div");
       if (if_block0)
         if_block0.c();
-      t1 = space();
+      t3 = space();
       if (if_block1)
         if_block1.c();
       this.h();
     },
     l(nodes) {
-      div2 = claim_element(nodes, "DIV", { class: true, style: true });
+      div0 = claim_element(nodes, "DIV", { class: true });
+      var div0_nodes = children(div0);
+      input0 = claim_element(div0_nodes, "INPUT", { type: true });
+      t0 = claim_space(div0_nodes);
+      input1 = claim_element(div0_nodes, "INPUT", { type: true });
+      div0_nodes.forEach(detach);
+      t1 = claim_space(nodes);
+      div3 = claim_element(nodes, "DIV", { class: true, style: true });
+      var div3_nodes = children(div3);
+      div1 = claim_element(div3_nodes, "DIV", { class: true });
+      children(div1).forEach(detach);
+      t2 = claim_space(div3_nodes);
+      div2 = claim_element(div3_nodes, "DIV", { class: true });
       var div2_nodes = children(div2);
-      div0 = claim_element(div2_nodes, "DIV", { class: true });
-      children(div0).forEach(detach);
-      t0 = claim_space(div2_nodes);
-      div1 = claim_element(div2_nodes, "DIV", { class: true });
-      var div1_nodes = children(div1);
       if (if_block0)
-        if_block0.l(div1_nodes);
-      div1_nodes.forEach(detach);
-      t1 = claim_space(div2_nodes);
-      if (if_block1)
-        if_block1.l(div2_nodes);
+        if_block0.l(div2_nodes);
       div2_nodes.forEach(detach);
+      t3 = claim_space(div3_nodes);
+      if (if_block1)
+        if_block1.l(div3_nodes);
+      div3_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div0, "class", "overlay svelte-7ggqjh");
-      attr(div1, "class", "status svelte-7ggqjh");
-      attr(div2, "class", "bomb svelte-7ggqjh");
-      set_style(div2, "--plant-time", PLANT_TIME + "s");
-      set_style(div2, "--countdown-time", COUNTDOWN_TIME + "s");
+      attr(input0, "type", "number");
+      attr(input1, "type", "number");
+      attr(div0, "class", "settings svelte-c696o8");
+      attr(div1, "class", "overlay svelte-c696o8");
+      attr(div2, "class", "status svelte-c696o8");
+      attr(div3, "class", "bomb svelte-c696o8");
+      set_style(
+        div3,
+        "--plant-time",
+        /*PLANT_TIME*/
+        ctx[0] + "s"
+      );
+      set_style(
+        div3,
+        "--countdown-time",
+        /*COUNTDOWN_TIME*/
+        ctx[1] + "s"
+      );
       toggle_class(
-        div2,
+        div3,
         "planting",
         /*status*/
-        ctx[0] === BombStatus.PLANTING && /*plantTimer*/
-        ctx[1] !== -1
+        ctx[2] === BombStatus.PLANTING && /*plantTimer*/
+        ctx[3] !== -1
       );
       toggle_class(
-        div2,
+        div3,
         "counting-down",
         /*status*/
-        ctx[0] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
-        ctx[2] !== -1
+        ctx[2] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
+        ctx[4] !== -1
       );
       toggle_class(
-        div2,
+        div3,
         "defusing",
         /*status*/
-        ctx[0] === BombStatus.DEFUSING
+        ctx[2] === BombStatus.DEFUSING
       );
       toggle_class(
-        div2,
+        div3,
         "exploded",
         /*status*/
-        ctx[0] === BombStatus.EXPLODED
+        ctx[2] === BombStatus.EXPLODED
       );
       toggle_class(
-        div2,
+        div3,
         "defused",
         /*status*/
-        ctx[0] === BombStatus.DEFUSED
+        ctx[2] === BombStatus.DEFUSED
       );
     },
     m(target, anchor) {
-      insert_hydration(target, div2, anchor);
-      append_hydration(div2, div0);
-      append_hydration(div2, t0);
-      append_hydration(div2, div1);
+      insert_hydration(target, div0, anchor);
+      append_hydration(div0, input0);
+      set_input_value(
+        input0,
+        /*PLANT_TIME*/
+        ctx[0]
+      );
+      append_hydration(div0, t0);
+      append_hydration(div0, input1);
+      set_input_value(
+        input1,
+        /*COUNTDOWN_TIME*/
+        ctx[1]
+      );
+      insert_hydration(target, t1, anchor);
+      insert_hydration(target, div3, anchor);
+      append_hydration(div3, div1);
+      append_hydration(div3, t2);
+      append_hydration(div3, div2);
       if (if_block0)
-        if_block0.m(div1, null);
-      append_hydration(div2, t1);
+        if_block0.m(div2, null);
+      append_hydration(div3, t3);
       if (if_block1)
-        if_block1.m(div2, null);
+        if_block1.m(div3, null);
       current = true;
       if (!mounted) {
-        dispose = listen(
-          div2,
-          "pointerdown",
-          /*handleClick*/
-          ctx[6]
-        );
+        dispose = [
+          listen(
+            input0,
+            "input",
+            /*input0_input_handler*/
+            ctx[10]
+          ),
+          listen(
+            input1,
+            "input",
+            /*input1_input_handler*/
+            ctx[11]
+          ),
+          listen(
+            div3,
+            "pointerdown",
+            /*handleClick*/
+            ctx[8]
+          )
+        ];
         mounted = true;
       }
     },
     p(ctx2, [dirty]) {
+      if (dirty & /*PLANT_TIME*/
+      1 && to_number(input0.value) !== /*PLANT_TIME*/
+      ctx2[0]) {
+        set_input_value(
+          input0,
+          /*PLANT_TIME*/
+          ctx2[0]
+        );
+      }
+      if (dirty & /*COUNTDOWN_TIME*/
+      2 && to_number(input1.value) !== /*COUNTDOWN_TIME*/
+      ctx2[1]) {
+        set_input_value(
+          input1,
+          /*COUNTDOWN_TIME*/
+          ctx2[1]
+        );
+      }
       if (current_block_type === (current_block_type = select_block_type(ctx2)) && if_block0) {
         if_block0.p(ctx2, dirty);
       } else {
@@ -690,24 +767,24 @@ function create_fragment(ctx) {
         if_block0 = current_block_type && current_block_type(ctx2);
         if (if_block0) {
           if_block0.c();
-          if_block0.m(div1, null);
+          if_block0.m(div2, null);
         }
       }
       if (
         /*status*/
-        ctx2[0] === BombStatus.DEFUSING
+        ctx2[2] === BombStatus.DEFUSING
       ) {
         if (if_block1) {
           if_block1.p(ctx2, dirty);
           if (dirty & /*status*/
-          1) {
+          4) {
             transition_in(if_block1, 1);
           }
         } else {
           if_block1 = create_if_block(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
-          if_block1.m(div2, null);
+          if_block1.m(div3, null);
         }
       } else if (if_block1) {
         group_outros();
@@ -716,51 +793,69 @@ function create_fragment(ctx) {
         });
         check_outros();
       }
+      if (!current || dirty & /*PLANT_TIME*/
+      1) {
+        set_style(
+          div3,
+          "--plant-time",
+          /*PLANT_TIME*/
+          ctx2[0] + "s"
+        );
+      }
+      if (!current || dirty & /*COUNTDOWN_TIME*/
+      2) {
+        set_style(
+          div3,
+          "--countdown-time",
+          /*COUNTDOWN_TIME*/
+          ctx2[1] + "s"
+        );
+      }
       if (!current || dirty & /*status, BombStatus, plantTimer*/
-      3) {
+      12) {
         toggle_class(
-          div2,
+          div3,
           "planting",
           /*status*/
-          ctx2[0] === BombStatus.PLANTING && /*plantTimer*/
-          ctx2[1] !== -1
+          ctx2[2] === BombStatus.PLANTING && /*plantTimer*/
+          ctx2[3] !== -1
         );
       }
       if (!current || dirty & /*status, BombStatus, countdownTimer*/
-      5) {
+      20) {
         toggle_class(
-          div2,
+          div3,
           "counting-down",
           /*status*/
-          ctx2[0] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
-          ctx2[2] !== -1
+          ctx2[2] === BombStatus.COUNTING_DOWN && /*countdownTimer*/
+          ctx2[4] !== -1
         );
       }
       if (!current || dirty & /*status, BombStatus*/
-      1) {
+      4) {
         toggle_class(
-          div2,
+          div3,
           "defusing",
           /*status*/
-          ctx2[0] === BombStatus.DEFUSING
+          ctx2[2] === BombStatus.DEFUSING
         );
       }
       if (!current || dirty & /*status, BombStatus*/
-      1) {
+      4) {
         toggle_class(
-          div2,
+          div3,
           "exploded",
           /*status*/
-          ctx2[0] === BombStatus.EXPLODED
+          ctx2[2] === BombStatus.EXPLODED
         );
       }
       if (!current || dirty & /*status, BombStatus*/
-      1) {
+      4) {
         toggle_class(
-          div2,
+          div3,
           "defused",
           /*status*/
-          ctx2[0] === BombStatus.DEFUSED
+          ctx2[2] === BombStatus.DEFUSED
         );
       }
     },
@@ -776,20 +871,24 @@ function create_fragment(ctx) {
     },
     d(detaching) {
       if (detaching)
-        detach(div2);
+        detach(div0);
+      if (detaching)
+        detach(t1);
+      if (detaching)
+        detach(div3);
       if (if_block0) {
         if_block0.d();
       }
       if (if_block1)
         if_block1.d();
       mounted = false;
-      dispose();
+      run_all(dispose);
     }
   };
 }
-const PLANT_TIME = 5;
-const COUNTDOWN_TIME = 60;
 function instance($$self, $$props, $$invalidate) {
+  let PLANT_TIME = 5;
+  let COUNTDOWN_TIME = 60;
   let status = BombStatus.UNPLANTED;
   let plantTimer = -1;
   let countdownTimer = -1;
@@ -822,19 +921,19 @@ function instance($$self, $$props, $$invalidate) {
     }
   }
   function plantBomb() {
-    $$invalidate(0, status = BombStatus.PLANTING);
-    $$invalidate(1, plantTimer = setTimeout(
+    $$invalidate(2, status = BombStatus.PLANTING);
+    $$invalidate(3, plantTimer = setTimeout(
       () => {
-        $$invalidate(0, status = BombStatus.COUNTING_DOWN);
+        $$invalidate(2, status = BombStatus.COUNTING_DOWN);
         startCountdown();
       },
       PLANT_TIME * 1e3
     ));
   }
   function startCountdown() {
-    $$invalidate(2, countdownTimer = setInterval(
+    $$invalidate(4, countdownTimer = setInterval(
       () => {
-        $$invalidate(4, countdown -= 1);
+        $$invalidate(6, countdown -= 1);
         if (countdown < 10) {
           highBeepSound.play();
         } else {
@@ -847,13 +946,13 @@ function instance($$self, $$props, $$invalidate) {
     ));
   }
   function defuseBomb() {
-    $$invalidate(0, status = BombStatus.DEFUSING);
-    $$invalidate(5, wires = generateWires());
-    $$invalidate(3, wireToCut = getRandomWire());
+    $$invalidate(2, status = BombStatus.DEFUSING);
+    $$invalidate(7, wires = generateWires());
+    $$invalidate(5, wireToCut = getRandomWire());
   }
   function explode() {
     clearInterval(countdownTimer);
-    $$invalidate(0, status = BombStatus.EXPLODED);
+    $$invalidate(2, status = BombStatus.EXPLODED);
     explosionSound.play();
   }
   function cutWire(index) {
@@ -861,18 +960,28 @@ function instance($$self, $$props, $$invalidate) {
     if (((_a = wires[index]) == null ? void 0 : _a.label) !== wireToCut.label) {
       explode();
     }
-    $$invalidate(5, wires[index] = null, wires);
+    $$invalidate(7, wires[index] = null, wires);
     if (wires.filter((w) => (w == null ? void 0 : w.label) == wireToCut.label).length === 0) {
       defusedBomb();
     }
   }
   function defusedBomb() {
-    $$invalidate(0, status = BombStatus.DEFUSED);
+    $$invalidate(2, status = BombStatus.DEFUSED);
     clearInterval(countdownTimer);
     defusedSound.play();
   }
+  function input0_input_handler() {
+    PLANT_TIME = to_number(this.value);
+    $$invalidate(0, PLANT_TIME);
+  }
+  function input1_input_handler() {
+    COUNTDOWN_TIME = to_number(this.value);
+    $$invalidate(1, COUNTDOWN_TIME);
+  }
   const pointerdown_handler = (i) => cutWire(i);
   return [
+    PLANT_TIME,
+    COUNTDOWN_TIME,
     status,
     plantTimer,
     countdownTimer,
@@ -881,6 +990,8 @@ function instance($$self, $$props, $$invalidate) {
     wires,
     handleClick,
     cutWire,
+    input0_input_handler,
+    input1_input_handler,
     pointerdown_handler
   ];
 }
