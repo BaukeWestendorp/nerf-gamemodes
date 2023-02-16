@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { BombStatus, generateWires, getRandomWire, type WireInfo } from '../../lib/bomb/bomb';
 	import Wire from '../../lib/bomb/Wire.svelte';
+	import { onMount } from 'svelte';
 
 	const PLANT_TIME = 1;
-	const COUNTDOWN_TIME = 10;
+	const COUNTDOWN_TIME = 15;
 
 	let status = BombStatus.UNPLANTED;
 	let plantTimer = -1;
@@ -13,6 +14,17 @@
 
 	let countdown = COUNTDOWN_TIME;
 	let wires: (WireInfo | null)[] = [];
+
+	let lowBeepSound: HTMLAudioElement;
+	let highBeepSound: HTMLAudioElement;
+	let explosionSound: HTMLAudioElement;
+	let defusedSound: HTMLAudioElement;
+	onMount(() => {
+		lowBeepSound = new Audio('audio/beepLow.mp3');
+		highBeepSound = new Audio('audio/beepHigh.mp3');
+		explosionSound = new Audio('audio/explosion.mp3');
+		defusedSound = new Audio('audio/defused.mp3');
+	});
 
 	function handleClick() {
 		switch (status) {
@@ -41,7 +53,11 @@
 	function startCountdown() {
 		countdownTimer = setInterval(() => {
 			countdown -= 1;
-
+			if (countdown < 10) {
+				highBeepSound.play();
+			} else {
+				lowBeepSound.play();
+			}
 			if (countdown === 0) explode();
 		}, 1000);
 	}
@@ -55,6 +71,7 @@
 	function explode() {
 		clearInterval(countdownTimer);
 		status = BombStatus.EXPLODED;
+		explosionSound.play();
 	}
 
 	function cutWire(index: number) {
@@ -72,6 +89,7 @@
 	function defusedBomb() {
 		status = BombStatus.DEFUSED;
 		clearInterval(countdownTimer);
+		defusedSound.play();
 	}
 </script>
 
