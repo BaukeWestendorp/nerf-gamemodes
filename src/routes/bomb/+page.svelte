@@ -25,9 +25,7 @@
 					defuseBomb();
 				}
 				break;
-			case BombStatus.EXPLODED:
-				break;
-			case BombStatus.DEFUSED:
+			default:
 				break;
 		}
 	}
@@ -50,7 +48,7 @@
 
 	function defuseBomb() {
 		status = BombStatus.DEFUSING;
-		wires = generateWires(6);
+		wires = generateWires();
 		wireToCut = getRandomWire();
 	}
 
@@ -73,6 +71,7 @@
 
 	function defusedBomb() {
 		status = BombStatus.DEFUSED;
+		clearInterval(countdownTimer);
 	}
 </script>
 
@@ -97,26 +96,26 @@
 			{countdown}
 		{:else if status === BombStatus.EXPLODED}
 			<h1>GEËXPLODEERD</h1>
-			<p>Ray In Peace</p>
 			<img
 				src="https://bestanimations.com/Military/Explosions/atomic-mushroom-cloud-nuclear-explosion-4-3.gif"
 				alt="explosie"
 			/>
+			<p>Ray In Peace</p>
 		{:else if status === BombStatus.DEFUSED}
 			<h1>DEFUSED</h1>
-			<p>Nice</p>
 			<img
-				src="https://1.bp.blogspot.com/-NN1LDIBA5Jg/V0Mo5tQPLCI/AAAAAAAEfB0/RxUQiP-Ucx4aW-gRBTQWRIunbEsTM6qvwCLcB/s400/Fail%2Bgif%2B00157.gif"
-				alt="explosie"
+				src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWM4YTBiMTkzZDVkYjBjMTM2Y2Y5NTY1NmRmYmRjNWE3MTM5MDBlNyZjdD1n/6rU6mvxEKolQQ/giphy.gif"
+				alt="defused"
 			/>
+			<p>Nice</p>
 		{/if}
 	</div>
 
 	{#if status === BombStatus.DEFUSING}
-		<div>
+		<div class="defuser">
 			<div class="status">{countdown}</div>
-			<h3>Klik op alle {wireToCut.label} draden</h3>
-			<div class="defuser">
+			<h3 class="status">Klik op alle {wireToCut.label} draden</h3>
+			<div class="wirebox">
 				{#each wires as wireInfo, i}
 					<Wire on:pointerdown={() => cutWire(i)} {wireInfo} />
 				{/each}
@@ -147,6 +146,12 @@
 	}
 
 	.defuser {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.wirebox {
 		width: 60vw;
 		height: 60vh;
 		background: #333;

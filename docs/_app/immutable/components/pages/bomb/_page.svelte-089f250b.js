@@ -9,30 +9,39 @@ var BombStatus = /* @__PURE__ */ ((BombStatus2) => {
   return BombStatus2;
 })(BombStatus || {});
 const allWires = {
-  red: {
-    color: "red",
-    label: "rode"
-  },
-  green: {
-    color: "green",
-    label: "groene"
-  },
   blue: {
-    color: "blue",
-    label: "blauwe"
+    color: "seagreen",
+    label: "smaragdgroene"
+  },
+  orange: {
+    color: "indigo",
+    label: "indigokleurige"
+  },
+  purple: {
+    color: "firebrick",
+    label: "vuursteenrode"
   }
 };
-function generateWires(amount) {
-  let wires = [];
-  for (let i = 0; i < amount; i++) {
-    wires.push(getRandomWire());
-  }
+function generateWires() {
+  let wires = [
+    ...Object.values(allWires),
+    ...Object.values(allWires),
+    ...Object.values(allWires),
+    ...Object.values(allWires)
+  ];
+  shuffle(wires);
   return wires;
 }
 function getRandomWire() {
   const wireInfos = Object.values(allWires);
   return wireInfos[Math.floor(Math.random() * wireInfos.length)];
 }
+const shuffle = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+};
 const Wire_svelte_svelte_type_style_lang = "";
 function create_fragment$1(ctx) {
   let div;
@@ -49,7 +58,7 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h() {
-      attr(div, "class", "wire svelte-7phohw");
+      attr(div, "class", "wire svelte-1l41ls7");
       set_style(
         div,
         "--wire-color",
@@ -125,20 +134,20 @@ function create_if_block_5(ctx) {
   let h1;
   let t0;
   let t1;
-  let p;
-  let t2;
-  let t3;
   let img;
   let img_src_value;
+  let t2;
+  let p;
+  let t3;
   return {
     c() {
       h1 = element("h1");
       t0 = text("DEFUSED");
       t1 = space();
-      p = element("p");
-      t2 = text("Nice");
-      t3 = space();
       img = element("img");
+      t2 = space();
+      p = element("p");
+      t3 = text("Nice");
       this.h();
     },
     l(nodes) {
@@ -147,27 +156,27 @@ function create_if_block_5(ctx) {
       t0 = claim_text(h1_nodes, "DEFUSED");
       h1_nodes.forEach(detach);
       t1 = claim_space(nodes);
+      img = claim_element(nodes, "IMG", { src: true, alt: true });
+      t2 = claim_space(nodes);
       p = claim_element(nodes, "P", {});
       var p_nodes = children(p);
-      t2 = claim_text(p_nodes, "Nice");
+      t3 = claim_text(p_nodes, "Nice");
       p_nodes.forEach(detach);
-      t3 = claim_space(nodes);
-      img = claim_element(nodes, "IMG", { src: true, alt: true });
       this.h();
     },
     h() {
-      if (!src_url_equal(img.src, img_src_value = "https://1.bp.blogspot.com/-NN1LDIBA5Jg/V0Mo5tQPLCI/AAAAAAAEfB0/RxUQiP-Ucx4aW-gRBTQWRIunbEsTM6qvwCLcB/s400/Fail%2Bgif%2B00157.gif"))
+      if (!src_url_equal(img.src, img_src_value = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWM4YTBiMTkzZDVkYjBjMTM2Y2Y5NTY1NmRmYmRjNWE3MTM5MDBlNyZjdD1n/6rU6mvxEKolQQ/giphy.gif"))
         attr(img, "src", img_src_value);
-      attr(img, "alt", "explosie");
+      attr(img, "alt", "defused");
     },
     m(target, anchor) {
       insert_hydration(target, h1, anchor);
       append_hydration(h1, t0);
       insert_hydration(target, t1, anchor);
-      insert_hydration(target, p, anchor);
-      append_hydration(p, t2);
-      insert_hydration(target, t3, anchor);
       insert_hydration(target, img, anchor);
+      insert_hydration(target, t2, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t3);
     },
     p: noop,
     d(detaching) {
@@ -176,11 +185,11 @@ function create_if_block_5(ctx) {
       if (detaching)
         detach(t1);
       if (detaching)
-        detach(p);
-      if (detaching)
-        detach(t3);
-      if (detaching)
         detach(img);
+      if (detaching)
+        detach(t2);
+      if (detaching)
+        detach(p);
     }
   };
 }
@@ -188,20 +197,20 @@ function create_if_block_4(ctx) {
   let h1;
   let t0;
   let t1;
-  let p;
-  let t2;
-  let t3;
   let img;
   let img_src_value;
+  let t2;
+  let p;
+  let t3;
   return {
     c() {
       h1 = element("h1");
       t0 = text("GEËXPLODEERD");
       t1 = space();
-      p = element("p");
-      t2 = text("Ray In Peace");
-      t3 = space();
       img = element("img");
+      t2 = space();
+      p = element("p");
+      t3 = text("Ray In Peace");
       this.h();
     },
     l(nodes) {
@@ -210,12 +219,12 @@ function create_if_block_4(ctx) {
       t0 = claim_text(h1_nodes, "GEËXPLODEERD");
       h1_nodes.forEach(detach);
       t1 = claim_space(nodes);
+      img = claim_element(nodes, "IMG", { src: true, alt: true });
+      t2 = claim_space(nodes);
       p = claim_element(nodes, "P", {});
       var p_nodes = children(p);
-      t2 = claim_text(p_nodes, "Ray In Peace");
+      t3 = claim_text(p_nodes, "Ray In Peace");
       p_nodes.forEach(detach);
-      t3 = claim_space(nodes);
-      img = claim_element(nodes, "IMG", { src: true, alt: true });
       this.h();
     },
     h() {
@@ -227,10 +236,10 @@ function create_if_block_4(ctx) {
       insert_hydration(target, h1, anchor);
       append_hydration(h1, t0);
       insert_hydration(target, t1, anchor);
-      insert_hydration(target, p, anchor);
-      append_hydration(p, t2);
-      insert_hydration(target, t3, anchor);
       insert_hydration(target, img, anchor);
+      insert_hydration(target, t2, anchor);
+      insert_hydration(target, p, anchor);
+      append_hydration(p, t3);
     },
     p: noop,
     d(detaching) {
@@ -239,11 +248,11 @@ function create_if_block_4(ctx) {
       if (detaching)
         detach(t1);
       if (detaching)
-        detach(p);
-      if (detaching)
-        detach(t3);
-      if (detaching)
         detach(img);
+      if (detaching)
+        detach(t2);
+      if (detaching)
+        detach(p);
     }
   };
 }
@@ -379,7 +388,7 @@ function create_if_block(ctx) {
       this.h();
     },
     l(nodes) {
-      div2 = claim_element(nodes, "DIV", {});
+      div2 = claim_element(nodes, "DIV", { class: true });
       var div2_nodes = children(div2);
       div0 = claim_element(div2_nodes, "DIV", { class: true });
       var div0_nodes = children(div0);
@@ -390,7 +399,7 @@ function create_if_block(ctx) {
       );
       div0_nodes.forEach(detach);
       t1 = claim_space(div2_nodes);
-      h3 = claim_element(div2_nodes, "H3", {});
+      h3 = claim_element(div2_nodes, "H3", { class: true });
       var h3_nodes = children(h3);
       t2 = claim_text(h3_nodes, "Klik op alle ");
       t3 = claim_text(h3_nodes, t3_value);
@@ -407,8 +416,10 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "status svelte-1dew33f");
-      attr(div1, "class", "defuser svelte-1dew33f");
+      attr(div0, "class", "status svelte-7ggqjh");
+      attr(h3, "class", "status svelte-7ggqjh");
+      attr(div1, "class", "wirebox svelte-7ggqjh");
+      attr(div2, "class", "defuser svelte-7ggqjh");
     },
     m(target, anchor) {
       insert_hydration(target, div2, anchor);
@@ -611,9 +622,9 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "overlay svelte-1dew33f");
-      attr(div1, "class", "status svelte-1dew33f");
-      attr(div2, "class", "bomb svelte-1dew33f");
+      attr(div0, "class", "overlay svelte-7ggqjh");
+      attr(div1, "class", "status svelte-7ggqjh");
+      attr(div2, "class", "bomb svelte-7ggqjh");
       set_style(div2, "--plant-time", PLANT_TIME + "s");
       set_style(div2, "--countdown-time", COUNTDOWN_TIME + "s");
       toggle_class(
@@ -797,10 +808,6 @@ function instance($$self, $$props, $$invalidate) {
           defuseBomb();
         }
         break;
-      case BombStatus.EXPLODED:
-        break;
-      case BombStatus.DEFUSED:
-        break;
     }
   }
   function plantBomb() {
@@ -825,7 +832,7 @@ function instance($$self, $$props, $$invalidate) {
   }
   function defuseBomb() {
     $$invalidate(0, status = BombStatus.DEFUSING);
-    $$invalidate(5, wires = generateWires(6));
+    $$invalidate(5, wires = generateWires());
     $$invalidate(3, wireToCut = getRandomWire());
   }
   function explode() {
@@ -844,6 +851,7 @@ function instance($$self, $$props, $$invalidate) {
   }
   function defusedBomb() {
     $$invalidate(0, status = BombStatus.DEFUSED);
+    clearInterval(countdownTimer);
   }
   const pointerdown_handler = (i) => cutWire(i);
   return [
