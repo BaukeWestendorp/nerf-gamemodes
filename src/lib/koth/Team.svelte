@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { capturingTeam } from '../koth';
+	import { capturingTeam } from './koth';
 
 	export let name: string;
 	export let color: string;

@@ -181,6 +181,12 @@ function detach(node) {
     node.parentNode.removeChild(node);
   }
 }
+function destroy_each(iterations, detaching) {
+  for (let i = 0; i < iterations.length; i += 1) {
+    if (iterations[i])
+      iterations[i].d(detaching);
+  }
+}
 function element(name) {
   return document.createElement(name);
 }
@@ -341,6 +347,12 @@ function onMount(fn) {
 }
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
+}
+function bubble(component, event) {
+  const callbacks = component.$$.callbacks[event.type];
+  if (callbacks) {
+    callbacks.slice().forEach((fn) => fn.call(this, event));
+  }
 }
 const dirty_components = [];
 const binding_callbacks = [];
@@ -584,9 +596,11 @@ export {
   get_all_dirty_from_scope as H,
   get_slot_changes as I,
   component_subscribe as J,
-  toggle_class as K,
-  listen as L,
-  set_store_value as M,
+  listen as K,
+  bubble as L,
+  toggle_class as M,
+  destroy_each as N,
+  set_store_value as O,
   SvelteComponent as S,
   space as a,
   insert_hydration as b,

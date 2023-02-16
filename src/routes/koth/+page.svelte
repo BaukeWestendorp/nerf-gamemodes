@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Team from '../lib/koth/Team.svelte';
+	import Team from '../../lib/koth/Team.svelte';
 </script>
 
 <div class="teams">
