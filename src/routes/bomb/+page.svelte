@@ -97,14 +97,14 @@
 			{countdown}
 		{:else if status === BombStatus.EXPLODED}
 			<h1>GEËXPLODEERD</h1>
-			<p>Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss</p>
+			<p>Ray In Peace</p>
 			<img
 				src="https://bestanimations.com/Military/Explosions/atomic-mushroom-cloud-nuclear-explosion-4-3.gif"
 				alt="explosie"
 			/>
 		{:else if status === BombStatus.DEFUSED}
 			<h1>DEFUSED</h1>
-			<p>Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel</p>
+			<p>Nice</p>
 			<img
 				src="https://1.bp.blogspot.com/-NN1LDIBA5Jg/V0Mo5tQPLCI/AAAAAAAEfB0/RxUQiP-Ucx4aW-gRBTQWRIunbEsTM6qvwCLcB/s400/Fail%2Bgif%2B00157.gif"
 				alt="explosie"

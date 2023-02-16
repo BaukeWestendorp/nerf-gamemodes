@@ -136,7 +136,7 @@ function create_if_block_5(ctx) {
       t0 = text("DEFUSED");
       t1 = space();
       p = element("p");
-      t2 = text("Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      t2 = text("Nice");
       t3 = space();
       img = element("img");
       this.h();
@@ -149,7 +149,7 @@ function create_if_block_5(ctx) {
       t1 = claim_space(nodes);
       p = claim_element(nodes, "P", {});
       var p_nodes = children(p);
-      t2 = claim_text(p_nodes, "Hahah dat moment dat je bom kapot is gemaakt. Beetje meta wel");
+      t2 = claim_text(p_nodes, "Nice");
       p_nodes.forEach(detach);
       t3 = claim_space(nodes);
       img = claim_element(nodes, "IMG", { src: true, alt: true });
@@ -199,7 +199,7 @@ function create_if_block_4(ctx) {
       t0 = text("GEËXPLODEERD");
       t1 = space();
       p = element("p");
-      t2 = text("Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      t2 = text("Ray In Peace");
       t3 = space();
       img = element("img");
       this.h();
@@ -212,7 +212,7 @@ function create_if_block_4(ctx) {
       t1 = claim_space(nodes);
       p = claim_element(nodes, "P", {});
       var p_nodes = children(p);
-      t2 = claim_text(p_nodes, "Boem jonge allemaal dood haahah amateurs ahhh loooserrrssss");
+      t2 = claim_text(p_nodes, "Ray In Peace");
       p_nodes.forEach(detach);
       t3 = claim_space(nodes);
       img = claim_element(nodes, "IMG", { src: true, alt: true });
